@@ -191,8 +191,7 @@ body {
 
 /* RULES SECTION  */
 .rules {
-    /* display: none; */
-    display: flex;
+    display: none;
     position: absolute;
     top: 2rem;
     z-index: 2000000;
