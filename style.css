@@ -1,0 +1,367 @@
+* , *:before, *:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: #fff;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    background: linear-gradient( hsl(214, 47%, 23%), hsl(237, 49%, 15%) );
+}
+
+.container {
+    padding: 1.9rem 5%;
+}
+
+.flex {
+    display: flex;
+}
+.col {
+    flex-direction: column;
+}
+
+.header {
+    padding: 0.7rem;
+    border: 3px solid hsl(217, 16%, 45%);
+    border-radius: 10px;
+}
+
+.heading {
+    padding: 0.2rem 1rem;
+    font-size: 1.3rem;
+}
+
+
+.scoreboard {
+    color: hsl(229, 64%, 46%);
+    align-items: center;
+    margin-left: auto;
+    padding: 0.6rem 1.3rem;
+    background: #fff;
+    border-radius: 5px;
+}
+
+.scoreboard .head {
+    font-size: 0.8rem;
+}
+
+.scoreboard .score {
+    font-weight: 700;
+    font-size: 2.2rem;
+    color: hsl(214, 47%, 23%);
+}
+
+.main {
+    display: flex;
+}
+
+/* SELECT THE THING SECTION  */
+.play {
+    margin: 6rem auto;
+    position: relative;
+    /* display: none;  */
+    display: block;
+}
+
+.icons div {
+    position: absolute;
+    height: 90px;
+    width: 90px;
+    padding: 1rem 0 0 1rem;
+    border-radius: 50%;
+    background: #fff;
+    border-style: solid;
+    border-width: 10px;
+}
+
+.icons .paper {
+    top: -25%;
+    left: -15%;
+}
+.icons .rock {
+    top: 60%;
+    left: 27%;
+}
+.icons .scissors {
+    top: -25%;
+    left: 70%;
+}
+
+/* BORDER COLORS  */
+.paper {
+    border-color: hsl(230, 89%, 62%);
+}
+.rock {
+    border-color: hsl(349, 71%, 52%);
+}
+.scissors {
+    border-color: hsl(39, 89%, 49%);
+}
+
+/* PLAYING SECTION  */
+.game {
+    position: relative;
+}
+
+.playing {
+    margin: 3rem 3rem 0 3rem;
+    min-height: 200px;
+    display: flex;
+    display: none;
+    justify-content: space-between;
+}
+
+.playing .icon {
+    position: relative;
+    width: 90px;
+    height: 90px;
+    text-align: center;
+    margin: 2rem 0 6.25rem 0;
+    border-radius: 50%;
+    z-index: 9999;
+    /* background: hsla(214, 45%, 24%, 0.589); */
+}
+
+.playing .icon:first-child::after {
+    content: 'YOU PICKED';
+}
+
+.playing .icon:last-child::after {
+    content: 'THE HOUSE PICKED';
+}
+
+.icon > div {
+    width: 90px;
+    height: 90px;
+    margin-bottom: 1.25rem;
+    border-style: solid;
+    border-width: 10px;
+    border-radius: 50%;
+    background: #fff;
+}
+
+.icon > div img {
+    margin: 0.9rem 0 0 0;
+}
+
+.playing .icon:first-child::before {
+    content: '';
+    position: absolute;
+    top: -85%;
+    left: -90%;
+    display: none;
+    width: 250px;
+    height: 250px;
+    z-index: -1;
+    border-radius: 50%;
+    background: radial-gradient(closest-side, hsl(214, 47%, 23%), hsl(237, 49%, 15%)); 
+    /* background: repeating-radial-gradient(hsl(214, 47%, 23%), hsl(214, 47%, 23%) 20px, hsl(237, 49%, 15%) 15px, hsl(237, 49%, 15%) 30px); */
+}
+
+/* PLAY AGAIN SECTION  */
+.play-again {
+    text-align: center;
+    display: none;
+    transform: scale(0);
+}
+
+.play-again h1 {
+    font-size: 2rem;
+}
+
+.play-again button {
+    cursor: pointer;
+    margin-top: 1rem;
+    padding: 0.6rem 2.3rem;
+    border: 3px solid #fff;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+.play-again button:hover {
+    color: white;
+    background: transparent;
+}
+
+.scaling {
+    transform: scale(1);
+    transition: transform 500ms ease-out;
+}
+
+/* RULES SECTION  */
+.rules {
+    /* display: none; */
+    display: flex;
+    position: absolute;
+    top: 2rem;
+    z-index: 2000000;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 2.7rem;
+    background: #fff;
+    border-radius: 10px;
+}
+
+.rules .heading {
+    color: hsl(214, 47%, 23%);
+    padding: 1rem 0 4rem 0;
+    font-size: 2rem;
+}
+
+.closebtn {
+    padding: 5rem 0 2rem 0;
+}
+
+/* RULES BUTTON  */
+.rulebtn {
+    margin: 10% auto;
+}
+.rulebtn button {
+    color: #fff;
+    cursor: pointer;
+    padding: 0.5rem 1.8rem;
+    background: transparent;
+    border-radius: 7px;
+    border: 2px solid #fff;
+}
+.rulebtn button:hover {
+    color: hsl(229, 25%, 31%);
+    background: #fff;
+}
+
+.attribution { font-size: 11px; text-align: center; margin: 1rem 0;}
+.attribution a { color: hsl(228, 45%, 44%); }
+
+@media screen and (max-width: 320px) {
+    .rules {
+        padding: 1rem 1.2rem;
+    }
+}
+
+@media screen and (max-width: 425px) and (min-width: 380px) {
+    .rules {
+        padding: 1rem 4.2rem;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    html {
+        font-size: 20px;
+    }
+    .container {
+        padding: 1.5rem 10%;
+    }
+    .header {
+        margin: 0 25%;
+    }
+    .scoreboard {
+        padding: 0.5rem 2rem;
+    }
+
+    /* RULES SECTION ON BIG SCREENS  */
+    .rules {
+        display: none;
+        margin-left: 22%;
+        margin-top: 1rem;
+        padding: 1rem 6rem;
+        position: absolute;
+        top: 30%;
+        border-radius: 10px;
+    }
+    .rulesimg img {
+        padding: 1rem 0;
+    }
+    .rules .heading {
+        font-size: 1.5rem;
+        padding: 1rem 0;
+    }
+    .closebtn {
+        position: absolute;
+        top: 0.3rem;
+        left: 80%;
+        padding: 2rem 0;
+        cursor: pointer;
+    }
+    .closebtn img {
+        height: 25px;
+    }
+
+    /* PLAY SECTION ON BIG SCREENS  */
+    .play {
+        /* display: block; */
+        /* display: none; */
+        margin: 6rem auto 3rem auto;
+    }
+    .main-image img {
+        width: 350px;
+        height: 250px;
+    }
+    .icons div {
+        position: absolute;
+        height: 150px;
+        width: 150px;
+        padding: 1rem 0 0 1.2rem;
+        border-width: 15px;
+        cursor: pointer;
+    }
+    .icons > div img {
+        height: 70px;
+        width: 70px;
+    }
+    .icons .rock {
+        top: 60%;
+        left: 27%;
+    }
+    .icons .scissors {
+        left: 70%;
+    }
+
+    /* PLAYING GAME SECTION  */
+    /* .game {
+        display: none;
+        display: block;
+    } */
+    .playing {
+        margin: 3rem 20%;
+        /* display: none; */
+        /* display: flex; */
+    }
+    .margin-transform {
+        margin: 3rem 10%;
+        transition: margin 500ms ease-out; 
+    }
+    .playing .icon {
+        flex: 1;
+        margin: 0;
+        width: 260px;
+        height: 260px;
+        max-width: 260px;
+    }
+    .playing .icon > div {
+        width: 260px;
+        height: 260px;
+        margin: 0;
+        margin-bottom: 1rem;
+        border-width: 30px;
+        max-width: 260px;
+    }
+    .playing .icon > div img {
+        margin: 0;
+        margin: 2.2rem 0 0 0;
+        width: 100px;
+        height: 100px;
+    }
+    .playing .icon:first-child::after, .playing .icon:last-child::after {
+        font-size: 1.2rem;
+        margin-left: -10px;
+    }
+    .play-again {
+        position: absolute;
+        top: 30%;
+        left: 42%;
+    }
+    .rulebtn {
+        margin: 0 0 0 auto;
+    }
+}
